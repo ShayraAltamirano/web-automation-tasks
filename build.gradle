@@ -1,7 +1,11 @@
 plugins {
     id 'java'
+    //id 'com.gradle.build-scan' version '2.0.2'
 }
-
+/*buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+}*/
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -13,5 +17,14 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.141.59'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.3.0'
+    //codigo @Test, @AfterClass necesita esta dependencia:
+    implementation group: 'com.google.guava', name: 'guava', version: '30.1-jre'
+}
+
+test {
+    //Usando TestNG
+    useTestNG()
 }
