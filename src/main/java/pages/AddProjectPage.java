@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class AddProjectPage {
 
     public WebDriver driver;
-    public By nameField = By.id("edit_project_modal_field_name");
+    public By nameField = By.cssSelector("#edit_project_modal_field_name");
     public By addButton = By.cssSelector(".ist_button.ist_button_red");
 
 

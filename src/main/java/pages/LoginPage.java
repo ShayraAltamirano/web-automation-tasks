@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     public WebDriver driver;
-    public By usermailField = By.id("email");
-    public By passwordField = By.id("password");
+    public By usermailField = By.cssSelector("#email");
+    public By passwordField = By.cssSelector("#password");
     public By loginButton = By.cssSelector("#login_form button");
     //Constructor
     public LoginPage(WebDriver driver){
@@ -22,8 +22,8 @@ public class LoginPage {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public UpcomingPage clickLoginButton(){
+    public LeftPanelPage clickLoginButton(){
         driver.findElement(loginButton).click();
-        return new UpcomingPage(driver);
+        return new LeftPanelPage(driver);
     }
 }
