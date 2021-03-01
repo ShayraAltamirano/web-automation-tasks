@@ -2,21 +2,26 @@ import org.testng.annotations.Test;
 import pages.AddProjectPage;
 import pages.LoginPage;
 import pages.ProjectPage;
-import pages.UpcomingPage;
+import pages.LeftPanelPage;
 
 public class AddProjectTest extends BaseTest{
     @Test
     public void testAddProject(){
-        LoginPage loginPage = homePage.clickToLogin();
-        loginPage.setUsermail("shayra.al@gmail.com");
-        loginPage.setPassword("test12345");
-        UpcomingPage upcomingPage =loginPage.clickLoginButton();
+        LoginPage loginPage = welcomePage.clickToLogin();
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        AddProjectPage addProjectPage= upcomingPage.addProject();
+        loginPage.setUsermail("shayra.al@gmail.com");
+        loginPage.setPassword("test12345");
+        LeftPanelPage leftPanelPage =loginPage.clickLoginButton();
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        AddProjectPage addProjectPage= leftPanelPage.addProject();
         addProjectPage.setName("TestProject");
         ProjectPage projectPage = addProjectPage.clickAddNewProject();
 

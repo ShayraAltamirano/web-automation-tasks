@@ -3,12 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
+public class WelcomePage {
     private WebDriver driver;
-    private By formLogin = By.cssSelector("a[href*='showlogin']");
+    private By formLogin = By.cssSelector("ul._3XsmI li:first-child a._2q_cf");
 
     //Constructor
-    public HomePage(WebDriver driver){
+    public WelcomePage(WebDriver driver){
         this.driver=driver;
     }
 

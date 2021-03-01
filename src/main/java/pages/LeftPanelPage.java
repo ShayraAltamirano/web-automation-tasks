@@ -3,13 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class UpcomingPage {
+public class LeftPanelPage {
 
     public WebDriver driver;
-    public By addProjectLink = By.linkText("Add Project");
+    public By addProjectLink = By.cssSelector("#projects_list_manager a[data-track=\"projects|add\"]");
 
     //Construtor
-    public UpcomingPage(WebDriver driver){
+    public LeftPanelPage(WebDriver driver){
         this.driver =driver;
     }
 
